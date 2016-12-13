@@ -14,14 +14,14 @@ var cfgerr error
 func main() {
 	log.Println("~ Starting...")
 
-	if cfg, cfgerr = parseConfig(); cfgerr != nil {
+	if models.Conf, cfgerr = parseConfig(); cfgerr != nil {
 		log.Println("~ Failed to load configuration")
 		log.Fatal(cfgerr)
 	} else {
 		log.Println("~ Loaded configuration")
 	}
 
-	log.Printf("Config: {Port: %v, RHost: %v, RPort: %v, RPass, %v}", cfg.Port, cfg.Redis.Hostname, cfg.Redis.Port, cfg.Redis.Password)
+	log.Printf("Config: {Port: %v, RHost: %v, RPort: %v, RPass, %v}", models.Conf.Port, models.Conf.Redis.Hostname, models.Conf.Redis.Port, models.Conf.Redis.Password)
 }
 
 func parseConfig() (models.Config, error) {
