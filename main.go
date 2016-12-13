@@ -9,7 +9,6 @@ import (
 	"github.com/dechristopher/go-api-practice/Models"
 )
 
-var cfg models.Config
 var cfgerr error
 
 func main() {
