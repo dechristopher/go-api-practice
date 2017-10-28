@@ -1,7 +1,5 @@
 package models
 
-var Conf Config
-
 type Config struct {
 	Port  int   `json:"port"`
 	Redis RConf `json:"rconf"`
